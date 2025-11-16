@@ -1,6 +1,7 @@
 let likedCats = [];
 let viewedCats = 0;
-const totalCats = 15; // berapa banyak swipe
+const totalCats = 15;
+
 const card = document.getElementById("card");
 const catImage = document.getElementById("cat-image");
 const likeLabel = document.getElementById("like-label");
@@ -17,11 +18,8 @@ function loadCat() {
         showSummary();
         return;
     }
-    // preload gambar baru
     nextCatImg.src = `https://cataas.com/cat?${Date.now()}`;
-    nextCatImg.onload = () => {
-        catImage.src = nextCatImg.src;
-    }
+    nextCatImg.onload = () => { catImage.src = nextCatImg.src; }
 }
 
 document.getElementById("like").addEventListener("click", () => {
@@ -33,6 +31,7 @@ document.getElementById("dislike").addEventListener("click", () => {
     animateCard(-1);
 });
 
+// Swipe gesture
 let startX = 0;
 card.addEventListener("touchstart", e => startX = e.touches[0].clientX);
 card.addEventListener("touchmove", e => {
@@ -76,4 +75,5 @@ function showSummary() {
     });
 }
 
+// Load first cat
 loadCat();

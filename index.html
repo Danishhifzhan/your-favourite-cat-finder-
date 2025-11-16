@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Favourite Cat Finder</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swipe Cats</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h1>Paws & Preferences 🐾</h1>
-    <p class="subtitle">Swipe your way to the purrfect kitty</p>
+    <h1>Swipe Cats 🐱</h1>
+    <div class="subtitle">Like or Dislike your favorite cats!</div>
 
     <div id="card-container">
-        <div id="card" class="card">
-            <img id="cat-image" src="" alt="Cat Loading...">
-            <div id="like-label" class="label like-label">LIKE</div>
-            <div id="nope-label" class="label nope-label">NOPE</div>
+        <div class="card" id="card">
+            <img id="cat-image" src="">
+            <div class="label like-label" id="like-label">LIKE</div>
+            <div class="label nope-label" id="nope-label">NOPE</div>
         </div>
     </div>
 
     <div class="buttons">
-        <button id="dislike" class="btn dislike">👎 Dislike</button>
-        <button id="like" class="btn like">👍 Like</button>
+        <button class="btn like" id="like">LIKE</button>
+        <button class="btn dislike" id="dislike">DISLIKE</button>
     </div>
 
-    <div id="summary" class="summary">
-        <h2>Your Favourite Cats 😺</h2>
-        <p>You liked <span id="count"></span> cats!</p>
-        <div id="liked-cats" class="liked-grid"></div>
+    <div class="summary" id="summary">
+        <h2>You liked <span id="count"></span> cats!</h2>
+        <div class="liked-grid" id="liked-cats"></div>
     </div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

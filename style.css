@@ -1,18 +1,23 @@
 body {
     margin: 0;
     padding: 20px;
-    background: linear-gradient(135deg, #fceabb, #f8b500); /* gradient lembut */
+    background: linear-gradient(135deg, #fceabb, #f8b500);
     font-family: Arial, sans-serif;
     text-align: center;
     min-height: 100vh;
+    animation: gradientBG 10s ease infinite;
 }
 
-#card-container {
-    display: flex;
-    justify-content: center;
-    height: 400px;
-    position: relative;
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
+
+h1 { margin-bottom: 5px; }
+.subtitle { color: #666; margin-bottom: 20px; }
+
+#card-container { display: flex; justify-content: center; height: 400px; position: relative; }
 
 .card {
     width: 320px;
@@ -21,6 +26,46 @@ body {
     background: #fff;
     overflow: hidden;
     position: absolute;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
     transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.card img { width: 100%; height: 100%; object-fit: cover; }
+
+.label {
+    position: absolute;
+    top: 15px;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 22px;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: 0.2s;
+}
+
+.like-label { left: 15px; border: 3px solid #4CAF50; color: #4CAF50; }
+.nope-label { right: 15px; border: 3px solid #e74c3c; color: #e74c3c; }
+
+.buttons { margin-top: 25px; }
+.btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover { transform: scale(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+.like { background-color: #4CAF50; color: white; }
+.dislike { background-color: #e74c3c; color: white; }
+
+.summary { display: none; margin-top: 30px; }
+.liked-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+.liked-grid img {
+    width: 150px;
+    border-radius: 12px;
+    margin: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
